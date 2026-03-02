@@ -1,0 +1,149 @@
+﻿/* style.css
+   Light-mode, off-white design with soft corners.
+   Updated: force the Globe.gl canvas to fill its wrapper and remove padding-induced offsets.
+*/
+
+/* Variables */
+:root{
+    --bg: #fbfdff;
+    --surface: #ffffff;
+    --muted: #6b7280;
+    --text: #071021;
+    --accent: #0066ff;
+    --radius: 12px;
+    --container: 1100px;
+    --max-width: 980px;
+    /* Globe height can be tuned globally */
+    --globe-height: 680px; /* tuned for desktop */
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* Global */
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
+a{color:var(--accent);text-decoration:none}
+.container{max-width:var(--container);margin:0 auto;padding:28px}
+
+/* Header */
+.site-header{
+    position:sticky;top:0;z-index:40;
+    backdrop-filter:blur(6px);
+    background:linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.9));
+    border-bottom:1px solid rgba(2,6,23,0.06);
+}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:18px}
+
+/* Brand */
+.brand{display:flex;align-items:center;gap:14px}
+.logo{width:48px;height:48px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:700;color:#042135;background:linear-gradient(135deg, rgba(0,102,255,0.10), rgba(0,102,255,0.04));box-shadow:0 8px 20px rgba(2,6,23,0.06);border:1px solid rgba(2,6,23,0.04)}
+.brand-text .brand-name{font-weight:800;font-size:14px}
+.brand-text .brand-sub{font-size:12px;color:var(--muted)}
+
+/* Navigation */
+.primary-nav ul{display:flex;gap:12px;align-items:center;list-style:none;padding:0;margin:0}
+.nav-link{padding:8px 12px;border-radius:10px;color:var(--muted);font-weight:600;transition:background .14s ease,color .12s ease,transform .06s ease}
+.nav-link:hover{color:var(--text);background:rgba(0,102,255,0.06);transform:translateY(-1px)}
+.nav-link[aria-current="page"]{background:linear-gradient(90deg, rgba(0,102,255,0.14), rgba(0,102,255,0.06));color:#042135;box-shadow:0 6px 20px rgba(0,102,255,0.06)}
+
+/* Hero */
+.hero{display:grid;grid-template-columns:1fr 340px;gap:28px;align-items:center;padding:48px 0}
+.hero-left{max-width:var(--max-width)}
+.hero-name{margin:0 0 8px;font-size:36px;font-weight:900;letter-spacing:-0.4px;color:var(--text)}
+.hero-role{margin:0 0 18px;font-size:16px;font-weight:700;color:var(--muted)}
+.hero-line{margin:0 0 22px;color:var(--muted);line-height:1.6}
+
+/* CTA */
+.hero-ctas{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 16px;border-radius:12px;font-weight:800;text-decoration:none;box-shadow:0 10px 30px rgba(2,6,23,0.04)}
+.btn.primary{background:linear-gradient(90deg,var(--accent),#00a8ff);color:#fff}
+.btn.secondary{background:transparent;color:var(--accent);border:1px solid rgba(0,102,255,0.10)}
+
+/* Avatar */
+.hero-right{display:flex;align-items:center;justify-content:center}
+.avatar{width:150px;height:150px;border-radius:999px;overflow:hidden;background:linear-gradient(135deg,#f0f3f6,#e6eef8);border:1px solid rgba(2,6,23,0.04);box-shadow:0 16px 48px rgba(2,6,23,0.04)}
+.avatar img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* SUMMARY */
+.summary{padding:18px 0}
+.section-title{margin:0 0 8px;font-size:18px;font-weight:800}
+.summary-paragraph{max-width:70ch;color:var(--muted);margin:0 0 14px}
+.skills{display:flex;flex-direction:column;gap:10px}
+.skills-title{font-weight:800;margin:0 0 6px}
+.skills-list{display:grid;grid-template-columns:repeat(2, minmax(0,1fr));gap:8px;padding-left:18px;margin:0;color:var(--muted);font-weight:600}
+
+/* Globe section
+   Ensure the wrapper height equals the canvas height so the canvas is not clipped.
+   Important fixes:
+   - Remove wrapper padding that shifted the canvas.
+   - Force the internal Three.js canvas to fill the .globe-canvas element and reset any transform.
+   - Center the wrapper and limit max-width so it won't hug the page edges.
+*/
+.globe-section{padding-top:18px;padding-bottom:18px}
+.globe-wrapper{
+    position: relative;
+    border-radius: var(--radius);
+    height: var(--globe-height);       /* explicit controlled height */
+    max-height: 80vh;
+    margin: 0 auto;                    /* center horizontally */
+    overflow: hidden;
+    background: linear-gradient(180deg, rgba(2,6,23,0.03), rgba(255,255,255,0.00));
+    border: 1px solid rgba(2,6,23,0.04);
+    box-shadow: 0 12px 40px rgba(2,6,23,0.04);
+    display: block;                    /* not flex — prevents unexpected alignment */
+    padding: 0;                         /* removed padding to avoid offsetting the canvas */
+    width: 100%;
+    max-width: 1100px;                 /* cap width for very wide screens */
+}
+
+/* Make the container where Globe attaches fill the wrapper exactly */
+#globeViz, .globe-canvas{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* Force any canvas appended by Globe.gl / Three.js to match the parent size and reset transforms.
+   This addresses cases where globe.gl internally sets transforms or absolute positioning that
+   result in the rendered sphere appearing shifted.
+*/
+#globeViz > canvas,
+.globe-canvas > canvas {
+    position: absolute !important;
+    inset: 0 !important;              /* top:0; right:0; bottom:0; left:0 */
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    transform: none !important;
+}
+
+/* Tooltip */
+.globe-tooltip{position:fixed;pointer-events:none;transform:translate(-50%,-140%);padding:10px 12px;border-radius:10px;background:rgba(2,6,23,0.9);color:#fff;font-weight:700;box-shadow:0 10px 30px rgba(2,6,23,0.12);border:1px solid rgba(255,255,255,0.02);white-space:nowrap;z-index:120;opacity:0;transition:opacity .12s,transform .18s}
+.globe-tooltip[aria-hidden="false"]{opacity:1}
+
+/* Timeline */
+.timeline-section{padding-top:18px;padding-bottom:40px}
+.timeline{margin:20px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:18px;max-width:860px}
+.timeline-node{display:flex;gap:16px;align-items:flex-start;padding:14px;border-radius:12px;background:var(--surface);border:1px solid rgba(2,6,23,0.04);cursor:pointer;transition:transform .16s,box-shadow .16s,background .12s}
+.timeline-node:focus{outline:3px solid rgba(0,102,255,0.12);outline-offset:4px}
+.timeline-node:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(2,6,23,0.06);background:linear-gradient(180deg, rgba(0,102,255,0.03), rgba(255,255,255,0.02))}
+.node-year{min-width:100px;font-weight:800;color:var(--text)}
+.node-body{flex:1}
+.node-title{font-weight:800;margin-bottom:6px}
+.node-sub{color:var(--muted);font-size:13px}
+
+/* About grid */
+.about-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:12px}
+.card{padding:14px;border-radius:10px;background:var(--surface);border:1px solid rgba(2,6,23,0.04)}
+
+/* Footer */
+.site-footer{padding:18px 0;color:var(--muted);text-align:center;border-top:1px solid rgba(2,6,23,0.04)}
+
+/* Responsive adjustments: change globe height variable for smaller viewports */
+@media (max-width:980px) {
+    :root { --globe-height: 480px; }
+}
+@media (max-width:560px) {
+    :root { --globe-height: 320px; }
+}
