@@ -1,0 +1,270 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Projects — Andrés Gonzales</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Projects page specific styles */
+    .projects-header { padding:36px 0 28px; border-bottom:2px solid rgba(127,176,105,0.12); }
+    .projects-header h1 { margin:0 0 8px; font-size:32px; font-weight:900; color:var(--text-primary); }
+    .projects-header p { color:var(--text-secondary); margin:0; }
+    
+    .project-section { padding:28px 0; border-bottom:1px solid rgba(46,65,41,0.04); }
+    .project-section-title { font-size:22px; font-weight:900; color:var(--accent-green); margin:0 0 20px; }
+    
+    .project-case { 
+      display:grid; 
+      grid-template-columns:1fr 1fr; 
+      gap:24px; 
+      align-items:center; 
+      margin-bottom:28px; 
+      padding:0;
+    }
+    
+    .project-case.reversed { direction:rtl; }
+    .project-case.reversed > * { direction:ltr; }
+    
+    .project-text h3 { margin:0 0 6px; font-size:20px; font-weight:900; color:var(--accent-purple); }
+    .project-text .project-date { color:var(--text-secondary); font-size:13px; margin:0 0 12px; }
+    .project-text p { color:var(--text-secondary); line-height:1.6; margin:0 0 12px; }
+    
+    .project-images { display:flex; flex-direction:column; gap:16px; }
+    .project-img-container { 
+      background:linear-gradient(135deg,rgba(127,176,105,0.06),rgba(91,62,92,0.06)); 
+      border:1px dashed rgba(46,65,41,0.12); 
+      border-radius:10px; 
+      padding:20px; 
+      text-align:center; 
+      min-height:240px; 
+      display:flex; 
+      flex-direction:column; 
+      align-items:center; 
+      justify-content:center;
+      box-shadow:0 8px 20px rgba(46,65,41,0.04);
+    }
+    .project-img-label { color:var(--text-secondary); font-size:13px; margin-top:8px; font-weight:600; }
+    
+    .project-skills { margin-top:16px; }
+    .project-skills strong { color:var(--accent-green); display:block; margin-bottom:10px; }
+    .project-skills ul { padding-left:20px; margin:0; color:var(--text-secondary); }
+    .project-skills li { margin-bottom:6px; font-size:14px; }
+    
+    .section-skills { 
+      background:linear-gradient(180deg,var(--surface),var(--surface-2)); 
+      padding:16px; 
+      border-radius:10px; 
+      border:1px solid rgba(46,65,41,0.04); 
+      margin-top:12px;
+    }
+    .section-skills strong { color:var(--accent-purple); }
+    
+    .projects-footer { text-align:center; padding-bottom:36px; }
+    .projects-footer h3 { color:var(--text-primary); margin:0 0 8px; }
+    .projects-footer p { color:var(--text-secondary); margin:0 0 14px; }
+    
+    @media (max-width:900px) {
+      .project-case { grid-template-columns:1fr; }
+      .project-case.reversed { direction:ltr; }
+      .project-images { order:-1; margin-bottom:16px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Fixed header -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <div class="brand" aria-hidden="true">
+        <div class="logo">AG</div>
+        <div class="brand-text">
+          <div class="brand-name">Andrés Gonzales</div>
+          <div class="brand-sub">Hardware Systems &amp; Mechatronics</div>
+        </div>
+      </div>
+
+      <nav class="primary-nav" aria-label="Primary">
+        <ul>
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="experience.html" class="nav-link">Experience</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="projects.html" class="nav-link" aria-current="page">Projects</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Page Header -->
+    <section class="projects-header container">
+      <h1>Projects</h1>
+      <p>A selection of robotics, controls, and mechanical design projects from capstone, coursework, and research initiatives.</p>
+    </section>
+
+    <!-- SECTION 1: Mobile Robotics & Control Systems -->
+    <section class="project-section container">
+      <h2 class="project-section-title">🤖 Mobile Robotics & Control Systems</h2>
+
+      <!-- Project 1: System Controlled Mobile Robots -->
+      <div class="project-case">
+        <div class="project-text">
+          <h3>System Controlled Mobile Robots</h3>
+          <p class="project-date"><strong>NAU Capstone</strong> | Fall 2025 – Spring 2026</p>
+          <p>
+            As the System Control Engineer and Web Developer for my NAU Capstone, I lead the full systems integration and controls design for two mobile robots. My objective is to ensure seamless, reliable interaction between all hardware and software subsystems. My specific tasks include implementing PID control algorithms using Raspberry Pi, managing an intricate sensor network for real-time motion control, and developing embedded software. In collaboration with my electrical engineering teammates, I am also responsible for component-level design, including CAD modeling, engineering drawings, circuit schematics, and overall team leadership to harmonize our workflow.
+          </p>
+          <div class="project-skills">
+            <strong>Key Deliverables:</strong>
+            <ul>
+              <li>Full systems integration architecture</li>
+              <li>PID control loop implementation</li>
+              <li>Sensor fusion & real-time processing</li>
+              <li>Component-level CAD & schematics</li>
+            </ul>
+          </div>
+        </div>
+        <div class="project-images">
+          <div class="project-img-container">
+            [Component-level CAD model of the mobile robot or circuit schematic]
+            <div class="project-img-label">Component-level CAD design and circuit integration.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 2: Remote Data Acquisition & Web UI -->
+      <div class="project-case reversed">
+        <div class="project-text">
+          <h3>Remote Data Acquisition & Web UI</h3>
+          <p class="project-date"><strong>NAU Capstone Companion System</strong> | Fall 2025 – Spring 2026</p>
+          <p>
+            Alongside the hardware integration for the mobile robots, I developed a custom user-interface website dedicated to remote data acquisition. This allows for real-time system monitoring and remote control of multiple robotic subsystems simultaneously. Applying formal systems engineering methodologies, I documented all hardware/software interactions to ensure maximum reliability, predictable performance, and fault tolerance during field operations.
+          </p>
+          <div class="project-skills">
+            <strong>Key Deliverables:</strong>
+            <ul>
+              <li>Real-time dashboard & data visualization</li>
+              <li>Remote subsystem control interface</li>
+              <li>Systems engineering documentation</li>
+              <li>Fault tolerance & redundancy design</li>
+            </ul>
+          </div>
+        </div>
+        <div class="project-images">
+          <div class="project-img-container">
+            [Screenshot of the custom Web UI dashboard showing data streams]
+            <div class="project-img-label">Custom web interface for real-time remote data acquisition and system monitoring.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 1 Skills Summary -->
+      <div class="section-skills">
+        <strong>Top Skills Utilized (Robotics & Controls):</strong>
+        <ul style="padding-left:20px;margin:8px 0 0;color:var(--text-secondary)">
+          <li>Systems Integration & Fault Tolerance</li>
+          <li>PID Control Algorithms</li>
+          <li>Embedded Software (Raspberry Pi, C/C++, Python)</li>
+          <li>CAD Modeling (SolidWorks)</li>
+          <li>Full-Stack Web Development (HTML/CSS/JavaScript)</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- SECTION 2: Advanced Mechanical Simulation & Design -->
+    <section class="project-section container">
+      <h2 class="project-section-title">🔧 Advanced Mechanical Simulation & Design</h2>
+
+      <!-- Project 3: Thermal Analysis of Two-Cylinder Engine Block -->
+      <div class="project-case">
+        <div class="project-text">
+          <h3>Thermal Analysis of Two-Cylinder Engine Block</h3>
+          <p class="project-date"><strong>Advanced FEA Coursework</strong> | December 2025</p>
+          <p>
+            As the Simulation Lead for an Advanced FEA academic project, I conducted a comprehensive thermal simulation on a two-cylinder engine block. Operating as an individual contributor, my tasks involved setting up boundary conditions, mesh generation, and applying advanced finite element analysis (FEA) techniques to evaluate heat dissipation, thermal stresses, and material performance under extreme high-temperature operating conditions.
+          </p>
+          <div class="project-skills">
+            <strong>Key Deliverables:</strong>
+            <ul>
+              <li>Mesh generation & refinement strategy</li>
+              <li>Boundary condition setup & validation</li>
+              <li>Thermal gradient mapping</li>
+              <li>Stress analysis & material recommendations</li>
+            </ul>
+          </div>
+        </div>
+        <div class="project-images">
+          <div class="project-img-container">
+            [Screenshot of the meshed engine block from your report]
+            <div class="project-img-label">Mesh generation for the two-cylinder engine block.</div>
+          </div>
+          <div class="project-img-container">
+            [Thermal gradient heat map / colorful stress simulation of the engine block]
+            <div class="project-img-label">Thermal gradient mapping and heat dissipation results.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 4: RENEVATE Solar Tracker Development -->
+      <div class="project-case reversed">
+        <div class="project-text">
+          <h3>RENEVATE™ Solar Tracker Development</h3>
+          <p class="project-date"><strong>Renewable Energy Systems Project</strong> | Spring 2024</p>
+          <p>
+            I served as the Project Lead for the conceptual development of the RENEVATE™ automated solar panel tracking system. My tasks included full CAD modeling and the foundational mechanical system design. Our goal was to engineer a scalable, low-cost renewable energy solution tailored specifically for small-scale users and decentralized applications, directly addressing efficiency and power needs for residential and remote installations.
+          </p>
+          <div class="project-skills">
+            <strong>Key Deliverables:</strong>
+            <ul>
+              <li>Full mechanical system CAD design</li>
+              <li>Scalability & cost-optimization analysis</li>
+              <li>Prototype feasibility study</li>
+              <li>Systems documentation & design rationale</li>
+            </ul>
+          </div>
+        </div>
+        <div class="project-images">
+          <div class="project-img-container">
+            [CAD render or physical prototype photo of the RENEVATE Solar Tracker]
+            <div class="project-img-label">Foundational mechanical system design for the automated solar tracker.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 2 Skills Summary -->
+      <div class="section-skills">
+        <strong>Top Skills Utilized (Simulation & Design):</strong>
+        <ul style="padding-left:20px;margin:8px 0 0;color:var(--text-secondary)">
+          <li>Advanced FEA / Thermal Simulation (ANSYS / Simscape)</li>
+          <li>Mechanical System Design & Optimization</li>
+          <li>3D CAD Modeling (SolidWorks)</li>
+          <li>Renewable Energy Systems</li>
+          <li>MATLAB / Simulink</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Project Footer -->
+    <section class="projects-footer container">
+      <h3>Questions About These Projects?</h3>
+      <p style="color:var(--text-secondary);margin:0 0 14px">I'm happy to discuss technical details, methodologies, or potential collaboration opportunities.</p>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+        <a href="mailto:agg296@nau.edu" class="btn primary">Email Me</a>
+        <a href="https://www.linkedin.com/in/andres-g-796110170/" target="_blank" rel="noopener noreferrer" class="btn secondary">LinkedIn Profile</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <p style="margin:0;color:var(--text-secondary);font-size:13px">
+        © <span id="year"></span> Andrés Gonzales. All rights reserved.<br/>
+      </p>
+      <p class="personality">Thankful for God and my family for this beautiful life!</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
