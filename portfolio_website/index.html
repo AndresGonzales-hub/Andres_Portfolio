@@ -1,160 +1,101 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Andrés Gonzales — Mechanical engineering Senior~Hardware Systems & Mechatronics</title>
-
-    <!-- Use a clean system-first font stack -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Andrés Gonzales — Mechanical Engineering Senior — Hardware Systems & Mechatronics</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- Header / persistent navigation -->
-    <header class="site-header" role="banner">
-        <div class="container header-inner">
-            <div class="brand" aria-hidden="true">
-                <div class="logo">AG</div>
-                <div class="brand-text">
-                    <div class="brand-name">Andrés Gonzales</div>
-                    <div class="brand-sub">Hardware Systems &amp; Mechatronics</div>
-                </div>
-            </div>
-
-            <nav class="primary-nav" aria-label="Primary">
-                <ul>
-                    <li><a href="index.html" class="nav-link" aria-current="page">Home</a></li>
-                    <li><a href="about.html" class="nav-link">About</a></li>
-                    <li><a href="projects.html" class="nav-link">Projects</a></li>
-                    <li><a href="resume.html" class="nav-link">Resume</a></li>
-                    <li><a href="contact.html" class="nav-link">Contact</a></li>
-                </ul>
-            </nav>
+  <!-- Fixed header -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <div class="brand" aria-hidden="true">
+        <div class="logo">AG</div>
+        <div class="brand-text">
+          <div class="brand-name">Andrés Gonzales</div>
+          <div class="brand-sub">Hardware Systems &amp; Mechatronics</div>
         </div>
-    </header>
-
-    <main>
-        <!-- INTRODUCTION (top) -->
-        <section class="hero container" aria-labelledby="hero-title">
-            <div class="hero-left">
-                <h1 id="hero-title" class="hero-name">Andrés Gonzales</h1>
-                <p class="hero-role">Hardware Systems &amp; Mechatronics Engineer</p>
-
-                <p class="hero-line">
-                    Bilingual Mechanical Engineer specializing in electromechanical system integration, embedded controls,
-                    and manufacturing operations — building robust hardware that tightly couples digital control with mechanical design.
-                </p>
-
-                <div class="hero-ctas">
-                    <a class="btn primary" href="assets/Andres_Gonzales_Resume.pdf" download="Andres_Gonzales_Resume.pdf">Download Resume</a>
-                    <a class="btn secondary" href="projects.html">View Projects</a>
-                </div>
-            </div>
-
-            <aside class="hero-right" aria-label="Portrait">
-                <div class="avatar">
-                    <!-- replace with your professional headshot -->
-                    <img src="assets/images/profile/headshot.jpg" alt="Professional headshot of Andrés Gonzales" class="avatar-image">
-                </div>
-            </aside>
-        </section>
-
-        <!-- SUMMARY (About on the landing page) -->
-        <section class="summary container" aria-labelledby="summary-title">
-            <h2 id="summary-title" class="section-title">Summary</h2>
-            <p class="summary-paragraph muted">
-                Practical systems engineer with hands-on expertise across mechanical design, embedded firmware, and manufacturing
-                readiness. I lead cross-disciplinary integration, drive DFMEA-informed tradeoffs, and deliver systems that are
-                performant, testable, and scalable into production.
-            </p>
-
-            <div class="skills">
-                <h3 class="skills-title">Most notable skills</h3>
-                <ul class="skills-list">
-                    <li>Electromechanical systems architecture</li>
-                    <li>Embedded control & real-time firmware</li>
-                    <li>Motion control & sensor fusion</li>
-                    <li>Design for manufacture & assembly (DFM/DFMEA)</li>
-                    <li>Test automation & production handoff</li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- MAP / Globe section -->
-        <section class="globe-section container" aria-labelledby="globe-title">
-            <div class="section-header">
-                <h2 id="globe-title">International Engineering Experience</h2>
-                <p class="muted">Interactive map of key projects, internships and research locations.</p>
-            </div>
-
-            <div id="globeContainer" class="globe-wrapper">
-                <div id="globeViz" class="globe-canvas" role="img" aria-label="Interactive globe"></div>
-                <div id="globeTooltip" class="globe-tooltip" role="status" aria-live="polite" hidden></div>
-            </div>
-        </section>
-
-        <!-- TIMELINE -->
-        <section class="timeline-section container" aria-labelledby="timeline-title">
-            <div class="section-header">
-                <h2 id="timeline-title">Selected Timeline</h2>
-                <p class="muted">Milestones and roles that shaped my engineering work.</p>
-            </div>
-
-            <ol class="timeline" role="list">
-                <li class="timeline-node" data-target="about.html" tabindex="0" aria-label="2021 — NAU Mechanical Engineering">
-                    <div class="node-year">2021</div>
-                    <div class="node-body">
-                        <div class="node-title">NAU — Mechanical Engineering</div>
-                        <div class="node-sub muted">Foundational systems coursework & lab experience</div>
-                    </div>
-                </li>
-
-                <li class="timeline-node" data-target="about.html" tabindex="0" aria-label="2023 — Biomechatronics Lab & CAMINOS Scholar">
-                    <div class="node-year">2023</div>
-                    <div class="node-body">
-                        <div class="node-title">Biomechatronics Lab — CAMINOS Scholar</div>
-                        <div class="node-sub muted">Research in human-centered mechatronics</div>
-                    </div>
-                </li>
-
-                <li class="timeline-node" data-target="about.html" tabindex="0" aria-label="2024 — UC3M Spain Study Abroad">
-                    <div class="node-year">2024</div>
-                    <div class="node-body">
-                        <div class="node-title">UC3M — Study Abroad (Madrid)</div>
-                        <div class="node-sub muted">Cross-cultural engineering projects</div>
-                    </div>
-                </li>
-
-                <li class="timeline-node" data-target="projects.html" tabindex="0" aria-label="2025 — BOSCH Logistics Engineering Intern">
-                    <div class="node-year">2025</div>
-                    <div class="node-body">
-                        <div class="node-title">BOSCH — Logistics Engineering Intern</div>
-                        <div class="node-sub muted">Process optimization & systems integration (Madrid)</div>
-                    </div>
-                </li>
-
-                <li class="timeline-node" data-target="projects.html" tabindex="0" aria-label="2025-2026 — Lead Systems Integrator">
-                    <div class="node-year">2025–2026</div>
-                    <div class="node-body">
-                        <div class="node-title">Lead Systems Integrator — Dual-Robot Capstone</div>
-                        <div class="node-sub muted">End-to-end integration, safety and production handoff</div>
-                    </div>
-                </li>
-            </ol>
-        </section>
-    </main>
-
-    <footer class="site-footer" role="contentinfo">
-        <div class="container footer-inner">
-            <div>© <span id="year"></span> Andrés Gonzales</div>
-            <div class="muted">Built with clarity — system-first engineering design</div>
+      </div>
+      <nav class="primary-nav" aria-label="Primary">
+        <ul>
+          <li><a href="index.html" class="nav-link" aria-current="page">Home</a></li>
+          <li><a href="experience.html" class="nav-link">Experience</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="projects.html" class="nav-link">Projects</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <!-- HERO (fills viewport on desktop) -->
+    <section class="hero container" aria-labelledby="hero-title">
+      <div class="hero-left">
+        <h1 id="hero-title" class="hero-name">Andrés Gonzales</h1>
+        <p class="hero-role">Hardware Systems &amp; Mechatronics Engineer — Bilingual (EN/ES)</p>
+        <p class="hero-line">
+          Bilingual Mechanical Engineering and Spanish student (Expected Spring 2026) with cross-functional experience in global supply chain logistics, embedded systems control, and community-based research. Proven ability to drive technical projects from concept to execution, highlighted by international procurement optimization at BOSCH (Madrid) and full-systems integration for mobile robotics. Adept at leveraging CAD, SAP, and embedded programming (C/C++, Python) to solve complex engineering challenges, with a strong commitment to human-centered design, resource equity, and cross-cultural technical communication.        </p>
+        <div class="hero-ctas">
+          <a class="btn primary" href="assets/Andres_Gonzales_Resume.pdf" download="Andres_Gonzales_Resume.pdf">Download Resume</a>
+          <!-- experience button removed per request -->
         </div>
-    </footer>
+      </div>
+      <aside class="hero-right" aria-label="Portrait">
+        <div class="avatar">
+          <img src="assets/images/profile/headshot.jpg" alt="Professional headshot of Andrés Gonzales" class="avatar-image" id="profilePic">
+        </div>
+      </aside>
+    </section>
 
-    <!-- Globe.gl -->
-    <script defer src="https://unpkg.com/globe.gl"></script>
+    <!-- Summary -->
+    <section class="summary container" aria-labelledby="summary-title">
+      <h2 id="summary-title" class="section-title">Summary</h2>
+      <p class="summary-paragraph muted">
+        Practical systems engineer with hands-on expertise across mechanical design, embedded firmware, and manufacturing.
+        I lead cross-disciplinary integration and deliver testable, production-ready hardware solutions.
+      </p>
+    </section>
 
-    <!-- Main JS (globe + timeline + sets year) -->
-    <script src="js/main.js"></script>
+    <!-- Mini Interactive True/False Quiz Widget -->
+    <section class="game-widget container" aria-labelledby="game-title">
+      <div class="game-container" id="quizContainer">
+        <h3 id="game-title" class="game-title">🧪 Engineering True or False</h3>
+        <p id="quizQuestion" style="color:var(--text-secondary);font-size:15px;margin:0 0 12px"></p>
+        <div style="display:flex;gap:12px;justify-content:center;margin-top:8px">
+          <button class="game-btn" id="trueBtn">True</button>
+          <button class="game-btn" id="falseBtn">False</button>
+        </div>
+        <div id="quizFeedback" style="color:var(--accent-purple);font-weight:700;margin-top:12px"></div>
+        <div id="quizScore" style="color:var(--accent-green);font-size:14px;margin-top:8px"></div>
+      </div>
+    </section>
+
+    <!-- Globe -->
+    <section class="globe-section container" aria-labelledby="globe-title">
+      <div class="section-header">
+        <h2 id="globe-title">Interactive Globe</h2>
+        <p class="muted">Hover or click pins to learn where I worked and traveled. Use "Dive Deeper" to jump to experience entries.</p>
+      </div>
+      <div id="globeContainer" class="globe-wrapper">
+        <div id="globeViz" class="globe-canvas" role="img" aria-label="Interactive globe"></div>
+        <div id="globeTooltip" class="globe-tooltip" role="status" aria-live="polite" aria-hidden="true" hidden></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <div>© <span id="year"></span> Andrés Gonzales</div>
+      <div class="muted">Human-centered engineering &amp; international collaboration</div>
+      <p class="personality">Over 15 years playing saxophone, guitar, piano, and more! Talk to me about jazz.</p>
+    </div>
+  </footer>
+
+  <script defer src="https://unpkg.com/globe.gl"></script>
+  <script src="js/main.js"></script>
+
+
 </body>
 </html>
