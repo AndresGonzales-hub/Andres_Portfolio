@@ -202,6 +202,7 @@ a{color:var(--accent-green);text-decoration:none}
 .social-link:hover{background:var(--accent-purple-dark)}
 
 /* Resume embed */
+.resume-embed { margin-bottom: 22px; }
 .resume-embed .resume-actions{margin:12px 0}
 .resume-viewer iframe{width:100%;border-radius:8px;border:1px solid rgba(46,65,41,0.04)}
 
